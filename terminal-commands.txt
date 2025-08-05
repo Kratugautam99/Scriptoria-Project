@@ -1,0 +1,19 @@
+# 1) Install deps
+pip install -r requirements.txt
+
+# 2) Install Playwright browsers
+playwright install
+
+# 3) Google Gemini API Key(Powershell example below, we can set env var in terminal or git bash as well)
+$env:GEMINI_API_KEY="your-api-key" 
+
+# 4) Run FastAPI backend(currently not working)
+uvicorn src.api_server:app --reload
+
+# 5) Run Streamlit UI
+streamlit run src/streamlit_app.py
+
+# 6) (Standalone) Run CLI orchestrator
+# We can define URL and NAME environment variable in powershell, git-bash or terminal or just python input method
+python src/main.py
+

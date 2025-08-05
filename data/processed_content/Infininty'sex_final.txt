@@ -1,0 +1,126 @@
+August 4, 2025
+
+5min read
+
+Some Mathematicians Don’t Believe in Infinity
+
+Can “finitism” possibly describe the real world?
+
+ByManon Bischoffedited byDaisy Yuhas
+
+Eugene Mymrin/Getty Images
+
+One question has preoccupied humankind for thousands of years: Do infinities exist? More than 2,300 years ago Aristotle distinguished between two types of infinity: potential and actual. The former deals with abstract scenarios that would result from repeated processes. For example, if you were asked to imagine counting forever, adding 1 to the previous number, over and over again, this situation, in Aristotle’s view, would involve potential infinity. But actual infinities, the scholar argued, could not exist.
+
+Most mathematicians gave infinities a wide berth until the end of the 19th century. They were unsure of how to deal with these strange quantities. What results in infinity plus 1—or infinity times infinity? Then the German mathematician Georg Cantor put an end to these doubts. With set theory, he established the first mathematical theory that made it possible todeal with the immeasurable. Since then infinities have been an integral part of mathematics. At school, we learn about the sets of natural or real numbers, each of which is infinitely large, and we encounter irrational numbers, such as pi and the square root of 2, which have an infinite number of decimal places.
+
+Yet there are some people, so-called finitists, who reject infinity to this day. Because everything in our universe—including the resources to calculate things—seems to be limited, it makes no sense to them to calculate with infinities. And indeed, some experts have proposed an alternative branch of mathematics that relies only on finitely constructible quantities. Some are now even trying to apply these ideas to physics in the hope of finding better theories to describe our world.
+
+Modern mathematics is based on set theory, which, as the name suggests, revolves around groupings or sets. You can think of a set as a bag into which you can put all kinds of things: numbers, functions or other entities. By comparing the contents of different bags, their size can be determined. So if I want to know whether one bag is fuller than another, I take out objects one at a time from each bag at the same time and see which empties first.
+
+That concept doesn’t sound particularly surprising. Even small children can grasp the basic principle. But Cantor realized that infinitely large quantities can be compared in this way. Using set theory, he came to the conclusion that there areinfinities of different sizes. Infinity is not always the same as infinity; some infinities are larger than others.
+
+Mathematicians Ernst Zermelo and Abraham Fraenkel used set theory to give mathematics a foundation at the beginning of the 20th century. Before then subfields such as geometry, analysis, algebra and stochastics were largely in isolation from each other. Fraenkel and Zermelo formulated nine basic rules, known as axioms, on which the entire subject of mathematics is now based.
+
+Emily Riehl
+
+Martin Goldstern&Jakob Kellner
+
+Kevin Hartnett&Quanta Magazine
+
+Emma R. Hasson
+
+One such axiom, for example, is the existence of the empty set: mathematicians assume that there is a set that contains nothing; an empty bag. Nobody questions this idea. But another axiom ensures that infinitely large sets also exist, which is where finitists draw a line. They want to build a mathematics that gets by without this axiom, a finite mathematics.
+
+Finitists reject infinities not only because of the finite resources available to us in the real world. They are also bothered by counterintuitive results that can be derived from set theory. For example, according to the Banach-Tarski paradox, you can disassemble a sphere and then reassemble it into two spheres, each of which is as large as the original. From a mathematical point of view, it is no problem to double a sphere—but in reality, it is not possible.
+
+If the nine axioms allow such results, finitists argue, then something is wrong with the axioms. Because most of the axioms are seemingly intuitive and obvious, the finitists only reject the one that, in their view, contradicts common sense: the axiom on infinite sets.
+
+Their view can be expressed as follows: “a mathematical object only exists if it can be constructed from the natural numbers with a finite number of steps.” Irrational numbers, despite being reached with clear formulas, such as the square root of 2, consist of infinite sums and therefore cannot be part of finite mathematics.
+
+As a result, some logical principles no longer apply, including Aristotle’s theorem of theexcluded middle, according to which a mathematical statement is always either true or false. In finitism, a statement can be indeterminate at a certain point in time if the value of a number has not yet been determined. For example, with statements that revolve around numbers such as 0.999..., if you carry out the full period and consider an infinite number of 9’s, the answer becomes 1. But if there is no infinity, this statement is simply wrong.
+
+Without the theorem of the excluded middle, all kinds of difficulties arise. In fact, many mathematical proofs are based on this very principle. It is no surprise, then, that only a few mathematicians have dedicated themselves to finitism. Rejecting infinities makes mathematics more complicated.
+
+Thank you for signing up!
+
+Check out our other newsletters
+
+And yet there are physicistswho follow this philosophy, including Nicolas Gisin of the University of Geneva. He hopes that a finite world of numbers could describe our universe better than current modern mathematics. He bases his considerations on the idea that space and time can only contain a limited amount of information. Accordingly, it makes no sense to calculate with infinitely long or infinitely large numbers because there is no room for them in the universe.
+
+This effort has not yet progressed far. Nevertheless, I find it exciting. After all, physicsseems to be stuck: the most fundamental questions about our universe, such as how it came into being or how the fundamental forces connect, have yet to be answered. Finding a different mathematical starting point could be worth a try. Moreover, it is fascinating to explore how far you can get in mathematics if you change or omit some basic assumptions. Who knows what surprises lurk in the finite realm of mathematics?
+
+In the end, it boils down to aquestion of faith: Do you believe in infinities or not? Everyone has to answer that for themselves.
+
+This article originally appeared inSpektrum der Wissenschaftand was reproduced with permission.
+
+Before you close the page, we need to ask for your support.Scientific Americanhas served as an advocate for science and industry for 180 years, and we think right now is the most critical moment in that two-century history.
+
+We’re not asking for charity. If you become aDigital, Print or Unlimited subscribertoScientific American, you can help ensure that our coverage is centered on meaningful research and discovery; that we have the resources to report on the decisions that threaten labs across the U.S.; and that we support both future and working scientists at a time when the value of science itself often goes unrecognized.Click here to subscribe.
+
+Manon Bischoffis a theoretical physicist and an editor atSpektrum der Wissenschaft,the German-language sister publication ofScientific American.
+
+Some Mathematicians Don’t Believe in Infinity
+
+Can “finitism” possibly describe the real world?
+
+Manon Bischoff
+
+JWST Spots Ancient Light That Shouldn’t Exist
+
+JWST observations of light sources before the first galaxies should have formed are raising new questions about our galactic origins
+
+Conor Feehly
+
+Russian Volcano, Dormant for Hundreds of Years, Erupts after Massive Nearby Quake
+
+The Krasheninnikov volcano, located less than 150 miles away from the epicenter of Russia’s July 29 earthquake, began erupting on August 3
+
+Meghan Bartels
+
+How Teen Mathematician Hannah Cairo Disproved a Major Mathematical Wave Conjecture
+
+When she was just 17 years old, Hannah Cairo disproved the Mizohata-Takeuchi conjecture, breaking a four-decade-old mathematical assumption
+
+Emma R. Hasson
+
+Russia’s Earthquake, Wonders of Walking and Plant Genetics
+
+The lowdown on the Environmental Protection Agency’s move to repeal of the “endangerment” finding. Also, how did a juicy ketchup ingredient help create a starchy tuber?
+
+Rachel Feltman, Fonda Mwangi, Alex Sugiura, Jeffery DelViscio
+
+You Don’t Remember Being a Baby, but Your Brain Was Making Memories
+
+Brain scans capture memory formation in babies, raising new questions about why people forget their earliest years
+
+Nick Turk-Browne
+
+Subscribe toScientific Americanto learn and share the most exciting discoveries, innovations and ideas shaping our world today.
+
+Scientific American is part of Springer Nature, which owns or has commercial relations with thousands of scientific publications (many of them can be found at www.springernature.com/us). Scientific American maintains a strict policy of editorial independence in reporting developments in science to our readers.
+
+© 2025 SCIENTIFIC AMERICAN, A DIVISION OF SPRINGER NATURE AMERICA, INC.ALL RIGHTS RESERVED.
+
+
+
+We use cookies to enhance site navigation, analyze site usage & personalize content to provide social media features and to improve our marketing efforts. We also share information about your use of our site with our social media, advertising and analytics partners. By clicking “Accept All Cookies”, you agree to the storing of cookies on your device for the described purposes.View Our Privacy Policy
+
+When you visit any website, it may store or retrieve information on your browser, mostly in the form of cookies. This information might be about you, your preferences or your device and is mostly used to make the site work as you expect it to. The information does not usually directly identify you, but it can give you a more personalized web experience. Because we respect your right to privacy, you can choose not to allow some types of cookies. Click on the different category headings to find out more and change our default settings. However, blocking some types of cookies may impact your experience of the site and the services we are able to offer.
+
+These cookies are necessary for the website to function and cannot be switched off in our systems. They are usually only set in response to actions made by you which amount to a request for services, such as setting your privacy preferences, logging in or filling in forms. You can set your browser to block or alert you about these cookies, but some parts of the site will not then work. These cookies do not store any personally identifiable information.
+
+These cookies allow us to count visits and traffic sources so we can measure and improve the performance of our site. They help us to know which pages are the most and least popular and see how visitors move around the site. All information these cookies collect is aggregated and therefore anonymous. If you do not allow these cookies we will not know when you have visited our site, and will not be able to monitor its performance.
+
+These cookies enable the website to provide enhanced functionality and personalisation. They may be set by us or by third party providers whose services we have added to our pages. If you do not allow these cookies then some or all of these services may not function properly.
+
+These cookies may be set through our site by our advertising partners. They may be used by those companies to build a profile of your interests and show you relevant adverts on other sites. They do not store directly personal information, but are based on uniquely identifying your browser and internet device. If you do not allow these cookies, you will experience less targeted advertising.
+
+These cookies are set by a range of social media services that we have added to the site to enable you to share our content with your friends and networks. They are capable of tracking your browser across other sites and building up a profile of your interests. This may impact the content and messages you see on other websites you visit. If you do not allow these cookies you may not be able to use or see these sharing tools.
+
+These cookies may be set through our site by ourselves. They may be used by ourselves to build a profile of your interests and show you relevant content or adverts on our sites. They do not store directly personal information, but are based on uniquely identifying your browser and internet device. If you do not allow these cookies, you may experience less personalised content and/or advertising.
+
+These cookies may be set through our site by our advertising partners. They may be used by those companies to build a profile of your interests and show you relevant adverts on other sites. They do not store directly personal information, but are based on uniquely identifying your browser and internet device. If you do not allow these cookies, you will experience less targeted advertising.
+
+Allowing third-party ad tracking and third-party ad serving through Google and other vendors to occur. Please see more information on Google Ads
+
