@@ -1,6 +1,7 @@
 # src/scraper.py
 import os
 os.system("playwright install")
+os.system("sudo playwright install-deps")
 from playwright.sync_api import sync_playwright
 from bs4 import BeautifulSoup
 import asyncio
