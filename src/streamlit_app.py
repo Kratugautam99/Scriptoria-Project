@@ -16,7 +16,7 @@ from rl_reward import calculate_text_reward
 from rl_search import rl_based_search
 from audio_recorder_streamlit import audio_recorder
 
-def convert_audio_sf(path):
+def convert_audio(path):
     data, sr = sf.read(path)          
     mono = data.mean(axis=1) if data.ndim > 1 else data
     out  = path.replace(".wav", "_mono.wav")
