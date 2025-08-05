@@ -15,4 +15,5 @@ protobuf==3.20.*
 streamlit
 pillow
 pydub
+pyaudioop
 audio_recorder_streamlit
