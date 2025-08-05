@@ -66,7 +66,8 @@
 ├── .vscode/                 # Editor settings
 ├── example-urls.txt         # Sample URLs & friendly names
 ├── requirements.txt         # Python dependencies
-└── terminal-commands.txt    # Step-by-step CLI guide
+├── terminal-commands.txt    # Step-by-step CLI guide
+└── setup.sh                 # Environmental setup in Scriptoria Project
 ```
 
 ---
@@ -138,11 +139,21 @@ All CLI steps are captured in `terminal-commands.txt`. Here’s a quick referenc
 `example-urls.txt` contains **5 sample entries** (each with a friendly name and URL) that demonstrate how to feed web pages into the pipeline:
 
 ```text
-news_google=https://news.google.com/
-wikipedia_python=https://en.wikipedia.org/wiki/Python_(programming_language)
-arxiv_ai=https://arxiv.org/list/cs.AI/recent
-stackoverflow_cython=https://stackoverflow.com/questions/tagged/cython
-medium_nlp=https://medium.com/tag/nlp
+1) 
+Name - Joy of Discipline
+URL - https://library.acropolis.org/the-joy-of-discipline/
+2)
+Name - Gates of Morning
+URL - https://en.wikisource.org/wiki/The_Gates_of_Morning/Book_1/Chapter_1.
+3)
+Name - Born or Built Smart
+URL - https://www.psychologytoday.com/us/blog/curiosity-code/202508/born-smart-or-built-smart-the-truth-about-intelligence-and-effort
+4) 
+Name - Sufficient Reason
+URL - https://plato.stanford.edu/entries/sufficient-reason/
+5) 
+Name - Infinity's Existence
+URL - https://www.scientificamerican.com/article/what-if-infinity-didnt-exist/
 ```
 
 - Copy or rename `example-urls.txt` to `urls.txt` (or supply your own file)  
