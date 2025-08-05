@@ -24,7 +24,7 @@ def convert_audio_sf(path):
     return out
 
 
-iconpath = r"C:\Users\user\Downloads\Scriptoria-Project\data\logo\icon.png"
+iconpath = r"https://github.com/Kratugautam99/Scriptoria-Project/blob/main/data/logo/icon.png?raw=true"
 col_icon, col_title = st.columns([1, 8], gap="small")
 
 with col_icon:
