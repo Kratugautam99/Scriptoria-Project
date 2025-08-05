@@ -14,5 +14,6 @@ numpy
 protobuf==3.20.*
 streamlit
 pillow
-soundfile
 audio_recorder_streamlit
+soundfile
+
