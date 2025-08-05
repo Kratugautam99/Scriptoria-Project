@@ -17,8 +17,8 @@ from pydub import AudioSegment
 
 def convert_audio(path):
     audio = AudioSegment.from_file(path)
-    audio = audio.set_channels(1)       # mono
-    audio = audio.set_frame_rate(16000) # 16kHz
+    audio = audio.set_channels(1)       
+    audio = audio.set_frame_rate(16000) 
     converted_path = path.replace(".wav", "_converted.wav")
     audio.export(converted_path, format="wav")
     return converted_path
@@ -27,7 +27,7 @@ iconpath = r"C:\Users\user\Downloads\Scriptoria-Project\data\logo\icon.png"
 col_icon, col_title = st.columns([1, 8], gap="small")
 
 with col_icon:
-    st.image(iconpath, width=100)        # your icon
+    st.image(iconpath, width=100)        
 
 with col_title:
     st.markdown(
