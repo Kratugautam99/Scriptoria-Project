@@ -17,3 +17,12 @@ streamlit run src/streamlit_app.py
 # We can define URL and NAME environment variable in powershell, git-bash or terminal or just python input method
 python src/main.py
 
+# 7) For NonGPU Users
+# go to nonGPU-users folder and open provided notebook in colab
+# upload the provided zip file in colab
+# change runtime type to nonGPU and run all cells
+# then click the random named cloud flare link to access/view the project
+
+# 8) Deployed-Version
+# You can also use deployment link provided in the repo itself to view
+
