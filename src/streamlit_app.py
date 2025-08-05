@@ -3,6 +3,8 @@ import os
 import sys
 import signal
 import tempfile
+import numpy as np
+import soundfile as sf
 import streamlit as st
 from scraper import run as scrape
 sys.path.append(os.path.abspath(os.path.join(__file__,"..","..")))
@@ -13,15 +15,14 @@ from agents.ai_writer import WriterAgent
 from rl_reward import calculate_text_reward
 from rl_search import rl_based_search
 from audio_recorder_streamlit import audio_recorder
-from pydub import AudioSegment
 
-def convert_audio(path):
-    audio = AudioSegment.from_file(path)
-    audio = audio.set_channels(1)       
-    audio = audio.set_frame_rate(16000) 
-    converted_path = path.replace(".wav", "_converted.wav")
-    audio.export(converted_path, format="wav")
-    return converted_path
+def convert_audio_sf(path):
+    data, sr = sf.read(path)          
+    mono = data.mean(axis=1) if data.ndim > 1 else data
+    out  = path.replace(".wav", "_mono.wav")
+    sf.write(out, mono, 16000)
+    return out
+
 
 iconpath = r"C:\Users\user\Downloads\Scriptoria-Project\data\logo\icon.png"
 col_icon, col_title = st.columns([1, 8], gap="small")
