@@ -1,5 +1,4 @@
 # agents/ai_reviewer.py
-import os
 import google.generativeai as genai
 
 class ReviewerAgent:

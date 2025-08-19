@@ -1,0 +1,14 @@
+.vscode/
+.git/
+src/__pycache__/
+.nonGPU-users/
+*.pyc
+*.pyo
+*.pyd
+*.mp3
+*.wav
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.log

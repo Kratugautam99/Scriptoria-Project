@@ -7,14 +7,17 @@ playwright install
 # 3) Google Gemini API Key(Powershell example below, we can set env var in terminal or git bash as well)
 $env:GEMINI_API_KEY="your-api-key" 
 
-# 4) Run FastAPI backend(currently not working)
+# 4) Run FastAPI backend
 uvicorn src.api_server:app --reload
+http://127.0.0.1:8000/write?url=link -> write method sample [link: replace it with actual url]
+http://127.0.0.1:8000/review?url=link -> review method sample [link: replace it with actual url]
+http://127.0.0.1:8000/         -> about the api
 
 # 5) Run Streamlit UI
 streamlit run src/streamlit_app.py
 
 # 6) (Standalone) Run CLI orchestrator
-# We can define URL and NAME environment variable in powershell, git-bash or terminal or just python input method
+# We can define URL, NAME, RL Search Query Environment Variable (in powershell, git-bash or terminal) or just python input method
 python src/main.py
 
 # 7) For NonGPU Users

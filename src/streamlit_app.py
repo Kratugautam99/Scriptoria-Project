@@ -2,11 +2,12 @@
 import os
 import sys
 import signal
+import shutil
 import tempfile
-import numpy as np
 import soundfile as sf
 import streamlit as st
 from scraper import run as scrape
+from versioning import add_version
 sys.path.append(os.path.abspath(os.path.join(__file__,"..","..")))
 from agents.voice_api import text_to_speech, speech_to_text
 from agents.ai_reviewer import ReviewerAgent
@@ -123,6 +124,7 @@ if "step" not in st.session_state:
     st.session_state.tts_pid = None
     st.session_state.raw = ""
     st.session_state.query = ""
+    st.session_state.version = 1
 
 
 # STEP 1: Ask for URL + chapter name
@@ -131,13 +133,14 @@ if st.session_state.step == 1:
     name = st.text_input("2. Enter Name/ID", key="name1")
     rlvar = st.text_input("3. RL Search Query", key="rlvar1")
     if st.button("▶️ Start Workflow",key="start1"):
-        if not url or not name:
-            st.error("Please provide both URL and name.")
+        if not url or not name or not rlvar:
+            st.error("Please provide both URL, Name and RL Variable.")
         else:
             with st.spinner("🔍 Scraping & Screenshotting…"):
                 st.session_state.content = scrape(url, name)
                 st.session_state.raw = scrape(url, name, lol="html")
                 st.session_state.query = rlvar
+                add_version("original", st.session_state.content)
             st.session_state.screenshot = f"data/screenshots/{name}.png"
             st.session_state.step = 2
             st.rerun()
@@ -159,8 +162,9 @@ elif st.session_state.step == 3:
     st.subheader("🤖 AI Review & Scoring")
     with st.spinner("Reviewing…"):
         st.session_state.review = RA.review_chapter(st.session_state.content)
+        add_version(f"Review-Version-{st.session_state.version}", st.session_state.review)
         if st.session_state.humantxt:
-            st.session_state.score = calculate_text_reward(original=st.session_state.content, reviewed=st.session_state.writer_out)
+            st.session_state.score = calculate_text_reward(original=st.session_state.content, rewritten=st.session_state.writer_out)
         else:
             st.session_state.score = calculate_text_reward(original=st.session_state.content)
     if st.session_state.humantxt:
@@ -179,11 +183,13 @@ elif st.session_state.step == 4:
     with st.spinner("Loading function from button…"):
         base = st.session_state.writer_out or st.session_state.content
         st.session_state.writer_out = WA.spin_chapter(base, human_feedback=st.session_state.humantxt)
+        add_version(f"Writer-Version-{st.session_state.version}", st.session_state.writer_out)
+        st.session_state.version += 1
     if st.session_state.humantxt:
         st.write("📝 Rewritten Text from Human Input:\n\n", st.session_state.writer_out)
     else:
         st.write("📝 Rewritten Text from Original Content:\n\n" , st.session_state.writer_out)
-    st.session_state.score = calculate_text_reward(original=st.session_state.content, reviewed=st.session_state.writer_out)
+    st.session_state.score = calculate_text_reward(original=st.session_state.content, rewritten=st.session_state.writer_out)
     st.markdown(f"**RL Reward Score:** `{st.session_state.score:.3f}`")
     col1, col2 = st.columns(2)
     with col1:
@@ -293,8 +299,19 @@ elif st.session_state.step == 5:
 
     else:
         if st.button("🏁 Finish & Exit", key="finish5"):
-            st.session_state.step = 6
+            st.session_state.step = 6      
             st.rerun()
 
 elif st.session_state.step == 6:
     st.markdown("<h2 style='text-align: center;'>🎉 Thank You for using Scriptoria!! 🎉</h2>", unsafe_allow_html=True)
+    st.button("🔄 Restart Workflow", on_click=lambda: st.session_state.clear(), key="restart6")
+    folder_path = "chromadb"
+    if os.path.exists(folder_path):
+        if st.button("💀 Delete Versioning Folder"):
+            try:
+                shutil.rmtree(folder_path)
+                st.success(f"✅ Folder deleted: {folder_path}")
+            except Exception as e:
+                st.error(f"❌ Folder in Use")
+    else:
+        st.warning("⚠️ Folder does not exist.")
