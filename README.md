@@ -18,7 +18,8 @@
 - [🚀 Installation & Quickstart](#-installation--quickstart)  
 - [📋 Terminal Commands](#-terminal-commands)  
 - [🌐 Example URLs](#-example-urls)  
-- [🤖 Non-GPU Users](#-non-gpu-users)  
+- [🤖 Non-GPU Users](#-non-gpu-users)
+- [⚓ Docker Image](#-docker-image)
 - [🤝 Contributing](#-contributing)  
 - [📄 License](#-license)  
 
@@ -187,8 +188,15 @@ We welcome issues, feature requests, and pull requests!
 5. Open a Pull Request  
 
 ---
+## ⚓ Docker Image
+
+You can use below link and the instructions mentioned in the docker hub repo to run the application in your pc without any environment setup
+https://hub.docker.com/r/kratuzen/scriptoria-project
+
+---
 
 ## 📄 License
 
 This project is released under the MIT License.  
 See the [LICENSE](LICENSE) file for details.
+
