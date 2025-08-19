@@ -9,28 +9,33 @@ _MODEL = None
 
 def _load_model():
     global _MODEL
-    if _MODEL is not None:
+    if _MODEL:
         return _MODEL
 
-    base_dir = os.path.dirname(__file__)
-    project_root = os.path.abspath(os.path.join(base_dir, os.pardir))
-    model_dir = os.path.join(project_root, "data","model", "vosk-model-small-en-us-0.15")
+    model_dir = os.path.join(
+        os.path.dirname(os.path.abspath(__file__)),
+        "..", "data", "model", "vosk-model-small-en-us-0.15"
+    )
+    model_dir = os.path.normpath(model_dir)
 
     if not os.path.isdir(model_dir):
         raise FileNotFoundError(
-            f"VOSK model not found at {model_dir!r}. "
-            "Please download and unzip the model into models/vosk-model-small-en-us-0.15"
+            f"VOSK model not found at {model_dir}. "
+            "Download from https://alphacephei.com/vosk/models and unzip it there."
         )
 
     _MODEL = Model(model_dir)
     return _MODEL
 
 
+
 def text_to_speech(text: str):
     import pyttsx3
-    engine = pyttsx3.init()
+    engine = pyttsx3.init(driverName="espeak")  
+    engine.setProperty("voice", "en")           
     engine.say(text)
     engine.runAndWait()
+
 
 
 def speech_to_text(wav_path_or_bytes) -> str:
@@ -44,6 +49,7 @@ def speech_to_text(wav_path_or_bytes) -> str:
         str: Transcribed text.
     """
     model = _load_model()
+    
 
     if isinstance(wav_path_or_bytes, bytes):
         wf = wave.open(io.BytesIO(wav_path_or_bytes), "rb")

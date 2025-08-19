@@ -134,7 +134,7 @@ if st.session_state.step == 1:
     rlvar = st.text_input("3. RL Search Query", key="rlvar1")
     if st.button("▶️ Start Workflow",key="start1"):
         if not url or not name or not rlvar:
-            st.error("Please provide both URL, Name and RL Variable.")
+            st.error("Please provide URL, Name and RL Variable.")
         else:
             with st.spinner("🔍 Scraping & Screenshotting…"):
                 st.session_state.content = scrape(url, name)
