@@ -45,10 +45,9 @@ def main():
     add_version("reviewed", reviewed)
 
     print("3) RL Search example …")
-    docs = [raw, processed]
-    print(rl_based_search(docs, RLVar)[:1500])
+    print(rl_based_search(URL, NAME, RLVar)["final_answer"][:1500])
 
-    print("4) RL Reward … original->", calculate_text_reward(raw), " and rewritten->", calculate_text_reward(raw, rewritten=processed))
+    print("4) Content Score … original->", calculate_text_reward(raw), " and rewritten->", calculate_text_reward(raw, rewritten=processed))
 
     print("5) Voice Playback …")
     speak_text(processed[:1500])

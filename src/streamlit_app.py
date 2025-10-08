@@ -1,21 +1,31 @@
 # src/streamlit_app.py
-import os
-import sys
-import signal
-import shutil
-import tempfile
-import soundfile as sf
 import streamlit as st
+import soundfile as sf
 from scraper import run as scrape
 from versioning import add_version
-sys.path.append(os.path.abspath(os.path.join(__file__,"..","..")))
-from agents.voice_api import text_to_speech, speech_to_text
+from agents.voice_api import speech_to_text
 from agents.ai_reviewer import ReviewerAgent
-from multiprocessing import Process
 from agents.ai_writer import WriterAgent
 from rl_reward import calculate_text_reward
 from rl_search import rl_based_search
 from audio_recorder_streamlit import audio_recorder
+import asyncio, edge_tts, base64, tempfile, base64, shutil, sys, os
+sys.path.append(os.path.abspath(os.path.join(__file__,"..","..")))
+
+
+async def synthesize(text):
+    communicate = edge_tts.Communicate(text, "en-US-AriaNeural")
+    await communicate.save("output.mp3")
+
+def text_to_speech(text):
+    asyncio.run(synthesize(text))
+    with open("output.mp3", "rb") as f:
+        b64 = base64.b64encode(f.read()).decode()
+    st.markdown(f"""
+    <audio autoplay>
+        <source src="data:audio/mp3;base64,{b64}" type="audio/mp3">
+    </audio>
+    """, unsafe_allow_html=True)
 
 def convert_audio(path):
     data, sr = sf.read(path)          
@@ -23,7 +33,6 @@ def convert_audio(path):
     out  = path.replace(".wav", "_mono.wav")
     sf.write(out, mono, 16000)
     return out
-
 
 iconpath = r"https://github.com/Kratugautam99/Scriptoria-Project/blob/main/data/logo/icon.png?raw=true"
 col_icon, col_title = st.columns([1, 8], gap="small")
@@ -125,6 +134,7 @@ if "step" not in st.session_state:
     st.session_state.raw = ""
     st.session_state.query = ""
     st.session_state.version = 1
+    st.session_state.rlresult = ""
 
 
 # STEP 1: Ask for URL + chapter name
@@ -141,6 +151,7 @@ if st.session_state.step == 1:
                 st.session_state.raw = scrape(url, name, lol="html")
                 st.session_state.query = rlvar
                 add_version("original", st.session_state.content)
+                st.session_state.rlresult = rl_based_search(url, name, rlvar, 2)
             st.session_state.screenshot = f"data/screenshots/{name}.png"
             st.session_state.step = 2
             st.rerun()
@@ -149,10 +160,13 @@ if st.session_state.step == 1:
 elif st.session_state.step == 2:
     st.subheader("🌄 Scraped Screenshot")
     st.image(st.session_state.screenshot, use_container_width=True)
-    st.subheader("**RL Based Search(Scroll-Down):**")
-    docs = [st.session_state.raw, st.session_state.content]
-    search_result = rl_based_search(docs, st.session_state.query)
-    st.write(st.session_state.content)
+    st.subheader("**RL Based Search Result:**")
+    result = st.session_state.rlresult
+    st.write(result["final_answer"])
+    st.subheader("Query Attempts")
+    for attempt in result["query_attempts"]:
+        st.markdown(f"**Round {attempt['round']}** | Query: `{attempt['query']}`")
+        st.write(attempt["result"][:200] + "...")
     if st.button("▶️ Continue to Review", key="cont2"):
         st.session_state.step = 3
         st.rerun()
@@ -172,7 +186,7 @@ elif st.session_state.step == 3:
     else:
         st.markdown("**AI Review of Original Content:**\n\n")
     st.write(st.session_state.review)
-    st.markdown(f"**RL Reward Score:** `{st.session_state.score:.3f}`")
+    st.markdown(f"**Content Score:** `{st.session_state.score:.3f}`")
     if st.button("▶️ Rewrite Beautifully",key="rewrite3"):
         st.session_state.step = 4
         st.rerun()
@@ -185,28 +199,15 @@ elif st.session_state.step == 4:
         st.session_state.writer_out = WA.spin_chapter(base, human_feedback=st.session_state.humantxt)
         add_version(f"Writer-Version-{st.session_state.version}", st.session_state.writer_out)
         st.session_state.version += 1
+        text_to_speech(st.session_state.writer_out)
     if st.session_state.humantxt:
         st.write("📝 Rewritten Text from Human Input:\n\n", st.session_state.writer_out)
     else:
         st.write("📝 Rewritten Text from Original Content:\n\n" , st.session_state.writer_out)
     st.session_state.score = calculate_text_reward(original=st.session_state.content, rewritten=st.session_state.writer_out)
-    st.markdown(f"**RL Reward Score:** `{st.session_state.score:.3f}`")
     col1, col2 = st.columns(2)
     with col1:
-        with st.spinner("Generating TTS…"):
-            if st.button("🔊 Play via TTS", key="tts4"):
-                p = Process(target=text_to_speech, args=(st.session_state.writer_out,))
-                p.start()
-                st.session_state.tts_pid = p.pid
-                st.success(f"TTS started with PID {p.pid}")
-
-            if st.button("⏹ Stop TTS"):
-                if st.session_state.tts_pid:
-                    os.kill(st.session_state.tts_pid, signal.SIGTERM)
-                    st.success("TTS stopped.")
-                    st.session_state.tts_pid = None
-                else:
-                    st.warning("No TTS process running.")
+        st.markdown(f"**Content Score:** `{st.session_state.score:.3f}`")
     with col2:
         if st.button("▶️ Provide Human Edits", key="edit4"):
             st.session_state.step = 5
@@ -268,7 +269,7 @@ elif st.session_state.step == 5:
             st.rerun()
 
     elif choice == "Record Audio":
-        st.markdown("<p style='font-size:18px; font-weight:bold;'>Click to Record</p>", unsafe_allow_html=True)
+        st.markdown("<p style='font-size:18px; font-weight:bold;'>Click to Record (Microphone, Earphone, Headphone Recommended)</p>", unsafe_allow_html=True)
         audio_bytes = audio_recorder(
             text="",                            
             icon_name="microphone-alt",         

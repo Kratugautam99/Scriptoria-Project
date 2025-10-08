@@ -1,31 +1,35 @@
-# 1) Install deps
+# 1) Install deps [Requires: step 2,3,6 or step 2,3,4,5 or step 2,3,4]
+
 pip install -r requirements.txt
 
-# 2) Install Playwright browsers
+# 2) Install Playwright browsers [Requires: step 1,4 or 1,6 or 1,4,5]
+
 playwright install
 
-# 3) Google Gemini API Key(Powershell example below, we can set env var in terminal or git bash as well)
+# 3) Google Gemini API Key(Powershell example below, we can set env var in terminal or git bash as well) [Required: In Every Combination]
+
 $env:GEMINI_API_KEY="your-api-key" 
 
-# 4) Run FastAPI backend
-uvicorn src.api_server:app --reload
-http://127.0.0.1:8000/write?url=link -> write method sample [link: replace it with actual url]
-http://127.0.0.1:8000/review?url=link -> review method sample [link: replace it with actual url]
-http://127.0.0.1:8000/         -> about the api
+# 4) Run FastAPI backend [Requires: step 1,2,3 or step 3,7]
 
-# 5) Run Streamlit UI
+uvicorn src.api_server:app --reload
+http://localhost:8000/write?url=link -> write method sample 
+http://localhost:8000/review?url=link -> review method sample 
+http://localhost:8000/         -> about the api
+
+# 5) Run Streamlit UI [Requires: step 1,2,3,4 or step 3,4,7]
+
 streamlit run src/streamlit_app.py
 
-# 6) (Standalone) Run CLI orchestrator
-# We can define URL, NAME, RL Search Query Environment Variable (in powershell, git-bash or terminal) or just python input method
+# 6) (Standalone) Run CLI orchestrator [Requires: step 1,2,3 or step 7,3]
+# We can define URL, NAME, RL Search Query Environment Variable (in powershell, git-bash or terminal) or just python input method but it is lite version of streamlit version.
+
 python src/main.py
 
-# 7) For NonGPU Users
-# go to nonGPU-users folder and open provided notebook in colab
-# upload the provided zip file in colab
-# change runtime type to nonGPU and run all cells
-# then click the random named cloud flare link to access/view the project
+# 7) Environment Replication [Requires:  step 3,6 or step 3,4,5 or step 3,4]
+# you can replicate the environment if you have conda like below 
 
-# 8) Deployed-Version
-# You can also use deployment link provided in the repo itself to view
+conda env create -f environment.yml
+
+
 

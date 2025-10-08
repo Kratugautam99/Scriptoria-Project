@@ -31,7 +31,7 @@ def _load_model():
 
 def text_to_speech(text: str):
     import pyttsx3
-    engine = pyttsx3.init(driverName="espeak")  
+    engine = pyttsx3.init()  
     engine.setProperty("voice", "en")           
     engine.say(text)
     engine.runAndWait()
