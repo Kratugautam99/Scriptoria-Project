@@ -1,4 +1,4 @@
-# Scriptoria Project
+# Scriptoria Project Version-2
 
 <p align="center">
   <img src="data/logo/icon.png" alt="Scriptoria Logo" width="120" />
@@ -402,10 +402,21 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 <div align="center">
 
-**Ready to transform your content processing workflow?** 🚀
-
-*Star this repository if you find it helpful!*
-
-[![Star History Chart](https://api.star-history.com/svg?repos=Kratugautam99/Scriptoria-Project&type=Date)](https://star-history.com/#Kratugautam99/Scriptoria-Project&Date)
+### 🛠️ Made with Precision & 🧠  
+## ✨ **Kratu Gautam** ✨
 
 </div>
+
+---
+
+🎯 *Architect of agentic RL workflows, reproducible environments, and browser-audible AI interfaces.*  
+💡 *Driven by clarity, modularity, and a passion for empowering teams through automation and documentation.*
+
+---
+
+🔗 **GitHub:** [Kratugautam99](https://github.com/Kratugautam99)  
+📘 **Project:** [Scriptoria – AI-Driven Content Processing](https://github.com/Kratugautam99/Scriptoria-Project)
+
+---
+
+
