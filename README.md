@@ -1,8 +1,7 @@
-# Scriptoria Project Version-2
 
 <p align="center">
   <img src="data/logo/icon.png" alt="Scriptoria Logo" width="120" />
-  <h1 align="center">Scriptoria Project</h1>
+  <h1 align="center">Scriptoria Project V2</h1>
   <p align="center">A modular, AI-driven pipeline for intelligent document processing—from raw URLs to polished content.</p>
   <p align="center">
     <a href="#"><img src="https://img.shields.io/badge/python-3.8%2B-blue" alt="Python 3.8+"></a>
@@ -394,12 +393,6 @@ conda env create -f environment.yml
 
 ---
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
 <div align="center">
 
 ### 🛠️ Made with Precision & 🧠  
@@ -412,10 +405,14 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 🎯 *Architect of agentic RL workflows, reproducible environments, and browser-audible AI interfaces.*  
 💡 *Driven by clarity, modularity, and a passion for empowering teams through automation and documentation.*
 
----
-
 🔗 **GitHub:** [Kratugautam99](https://github.com/Kratugautam99)  
 📘 **Project:** [Scriptoria – AI-Driven Content Processing](https://github.com/Kratugautam99/Scriptoria-Project)
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
