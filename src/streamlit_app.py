@@ -3,14 +3,14 @@ import streamlit as st
 import soundfile as sf
 from scraper import run as scrape
 from versioning import add_version
+import asyncio, edge_tts, base64, tempfile, base64, shutil, sys, os
+sys.path.append(os.path.abspath(os.path.join(__file__,"..","..")))
 from agents.voice_api import speech_to_text
 from agents.ai_reviewer import ReviewerAgent
 from agents.ai_writer import WriterAgent
 from rl_reward import calculate_text_reward
 from rl_search import rl_based_search
 from audio_recorder_streamlit import audio_recorder
-import asyncio, edge_tts, base64, tempfile, base64, shutil, sys, os
-sys.path.append(os.path.abspath(os.path.join(__file__,"..","..")))
 
 
 async def synthesize(text):
