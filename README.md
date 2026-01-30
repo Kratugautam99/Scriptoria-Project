@@ -102,7 +102,7 @@ graph TD
 ```bash
 # Create environment from YAML
 conda env create -f environment.yml
-conda activate scriptenv
+conda activate scriptoriaenv
 
 # Install Playwright browsers
 playwright install
@@ -112,10 +112,10 @@ playwright install
 
 ```bash
 # Create virtual environment
-python -m venv scriptenv
+python -m venv scriptoriaenv
 
 # Activate (Windows PowerShell)
-.\scriptenv\Scripts\Activate.ps1
+.\scriptoriaenv\Scripts\Activate.ps1
 
 # If permission Error:
 Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process -Force
@@ -378,7 +378,7 @@ playwright install
 **Dependency Conflicts:**
 ```bash
 # Fresh environment setup
-conda env remove -n scriptenv
+conda env remove -n scriptoriaenv
 conda env create -f environment.yml
 ```
 ---
