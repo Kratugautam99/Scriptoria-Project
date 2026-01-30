@@ -108,7 +108,7 @@ conda activate scriptoriaenv
 playwright install
 ```
 
-#### 🛠️ Option 2: Virtual Environment and Install Dependencies
+#### 🛠️ Option 2: Virtual Environment and Install Dependencies (Python Version = 3.10.18)
 
 ```bash
 # Create virtual environment
