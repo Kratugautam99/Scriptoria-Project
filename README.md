@@ -1,7 +1,7 @@
 
 <p align="center">
   <img src="data/logo/icon.png" alt="Scriptoria Logo" width="120" />
-  <h1 align="center">Scriptoria Project V2</h1>
+  <h1 align="center">📜 Scriptoria Project V2</h1>
   <p align="center">A modular, AI-driven pipeline for intelligent document processing—from raw URLs to polished content.</p>
   <p align="center">
     <a href="#"><img src="https://img.shields.io/badge/python-3.8%2B-blue" alt="Python 3.8+"></a>
